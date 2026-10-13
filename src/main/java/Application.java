@@ -16,8 +16,8 @@ public class Application {
     public CommandLineRunner demo(AddressBookDB repository) {
         return (args) -> {
             AddressBook addressBook = new AddressBook();
-            addressBook.addBuddy(new BuddyInfo("Homer Simpson", "613-555-1234"));
-            addressBook.addBuddy(new BuddyInfo("Marge Simpson", "613-555-5678"));
+            addressBook.addBuddy(new BuddyInfo("Homer Simpson", "613-555-1234", "742 Evergreen Terrace"));
+            addressBook.addBuddy(new BuddyInfo("Marge Simpson", "613-555-5678", "742 Evergreen Terrace"));
 
             repository.save(addressBook);
 

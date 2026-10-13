@@ -14,15 +14,24 @@ public class BuddyInfo {
 
     private String name;
     private String phoneNumber;
+    private String address;
+
+    public BuddyInfo(String name, String phoneNumber, String address) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
 
     public BuddyInfo(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.address = "Unknown Address";
     }
 
     public BuddyInfo() {
         this.name = "Default Name";
         this.phoneNumber = "000-000-0000";
+        this.address = "Default Address";
     }
 
     public Long getId() {
@@ -49,8 +58,16 @@ public class BuddyInfo {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return name + " (" + phoneNumber + ")";
+        return name + " (" + phoneNumber + ", " + address + ")";
     }
 }

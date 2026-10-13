@@ -25,7 +25,7 @@ public class AddressBookControllerTest {
     public void testViewAddressBook() throws Exception {
         AddressBook addressBook = new AddressBook();
         addressBook.setId(1L);
-        addressBook.addBuddy(new BuddyInfo("Homer Simpson", "613-555-1234"));
+        addressBook.addBuddy(new BuddyInfo("Homer Simpson", "613-555-1234", "742 Evergreen Terrace"));
 
         when(addressBookRepository.findById(1L)).thenReturn(Optional.of(addressBook));
 
