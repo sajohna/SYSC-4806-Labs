@@ -1,0 +1,36 @@
+# 1. Create a new Address Book
+POST http://localhost:8080/addressBooks
+Content-Type: application/json
+
+{}
+
+---
+
+# 2. Create a BuddyInfo associated with an Address Book (assuming Address Book ID is 1)
+# Note: Adjust the addressBook URI based on your created resource path
+POST http://localhost:8080/buddyInfoes
+Content-Type: application/json
+
+{
+  "name": "Homer Simpson",
+  "phoneNumber": "613-555-1234",
+  "addressBook": "http://localhost:8080/addressBooks/1"
+}
+
+---
+
+# Alternative: Add a buddy using the /buddies association endpoint if using Spring Data REST collection associations
+POST http://localhost:8080/addressBooks/1/buddies
+Content-Type: text/uri-list
+
+http://localhost:8080/buddyInfoes/1
+
+---
+
+# 3. View the Address Book via REST (JSON)
+GET http://localhost:8080/addressBooks/1
+
+---
+
+# 4. View the Address Book via Thymeleaf GUI (Browser or HTTP client)
+GET http://localhost:8080/addressbook/1
